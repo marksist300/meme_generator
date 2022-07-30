@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Nav from './components/Nav'
 import Photo from './components/Photo'
 import Input from './components/Input'
-
+import normalize from 'normalize.css'
 function App() {
   const [count, setCount] = useState(0)
 
