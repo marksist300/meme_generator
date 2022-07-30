@@ -2,7 +2,7 @@ $linearColor: linear-gradient(90deg, #391346 1.18%, #A011D1 100%);
 $textWhite: #FFFFFF;
 
 :root {
-    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+    font-family: 'Karla', Inter, Avenir, Helvetica, Arial, sans-serif;
     font-size: 62.5%;
     line-height: 24px;
     font-weight: 400;
@@ -16,6 +16,10 @@ color: inherit;
 text-decoration: none;
 }
 
+body{
+    background-color: #282D35;
+}
+
 nav{
     display: flex;
     color: $textWhite;
@@ -24,6 +28,12 @@ nav{
 
     *{
         margin: 0 .6rem;
+    }
+
+    h1{
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 2.4rem;
     }
 }
 
@@ -36,15 +46,63 @@ section{
 .input-container{
     display:flex;
     justify-content: center;
-    margin: 3.6rem 0;
+    margin-top: 3.6rem;
 
     form{
         padding: 1.5rem;
+        width: 100%;
+    }
+
+
+    .input-fields{
+        display:flex;
+        justify-content: space-between;
+        width: 80%;
+        margin: auto;
+    }
+    
+    .text-box:first-child{
+        margin-right: 1.7rem;
+    }
+
+    .text-box{
+        width: 45%;
+        height: 3.5rem;
+        text-align: center;
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+        border: 1px solid #D5D4D8;
+        border-radius: .5rem;
+    }
+
+    .text-box:focus{
+        outline: #A011D1;
+        border: 2px solid #A011D1;
     }
 
     .btn-section{
-        display:flex;
-        justify-content: center;
-        text-align: center;
+        background: $linearColor;
+        width: 80%;
+        margin-top: 1.5rem;
+        margin-bottom: 3.5rem;
+        margin: 1.5rem auto 3.5rem auto;
+        border-radius: .5rem;
+
+    }
+
+    .generate-meme-btn{
+        width: 100%;
+        color: $textWhite;
+        background-image: $linearColor;
+        height: 4rem;
+        font-weight: 700;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+        border: none;
+        border-radius: .5rem;
+    }
+
+    .generate-meme-btn:active{
+        border: 1px solid #391346;
     }
 }
