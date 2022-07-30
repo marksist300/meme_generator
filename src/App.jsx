@@ -1,12 +1,16 @@
 import { useState } from 'react'
+import Nav from './components/Nav'
+import Photo from './components/Photo'
+import Input from './components/Input'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-      <h1>Hello</h1>
-      <p>WORLD</p>
+      <Nav />
+      <Input />
+      <Photo />
     </div>
   )
 }
