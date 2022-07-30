@@ -1,0 +1,50 @@
+$linearColor: linear-gradient(90deg, #391346 1.18%, #A011D1 100%);
+$textWhite: #FFFFFF;
+
+:root {
+    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 62.5%;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+*{
+box-sizing: border-box;
+}
+a {
+color: inherit;
+text-decoration: none;
+}
+
+nav{
+    display: flex;
+    color: $textWhite;
+    background-image: $linearColor;
+    padding: 2rem;
+
+    *{
+        margin: 0 .6rem;
+    }
+}
+
+section{
+    padding: 0 3.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.input-container{
+    display:flex;
+    justify-content: center;
+    margin: 3.6rem 0;
+
+    form{
+        padding: 1.5rem;
+    }
+
+    .btn-section{
+        display:flex;
+        justify-content: center;
+        text-align: center;
+    }
+}
