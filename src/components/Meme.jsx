@@ -2,12 +2,26 @@ import React from 'react'
 import memes from "../memeData"
 
 export default function Input(){
-    const [meme, setMeme] = React.useState("http://i.imgflip.com/1bij.jpg")
+    const [meme, setMeme] = React.useState({
+        topText: '',
+        bottomText: '',
+        randomImage: 'http://i.imgflip.com/1bij.jpg'
+    })
 
-    function getMemeImage() {
-        const memesArray = memes.data.memes
+    const allMemeImages = React.useState(memes)
+
+    function getMemeImage(e) {
+        e.preventDefault()
+        const memesArray = allMemeImages[0].data.memes
         const index = Math.floor(Math.random() * memesArray.length)
-        setMeme(memesArray[index].url)
+        const memeCalled = memesArray[index].url
+        setMeme(prev=> {
+            return {
+                ...prev,
+                randomImage: memeCalled
+            }
+        })
+        console.log(meme)
     }
 
     return (
@@ -18,11 +32,11 @@ export default function Input(){
                     <input className='text-box' type="text" placeholder='Text for bottom of image' />
                 </div>
                 <div className='btn-section'>
-                <button className='generate-meme-btn'>Get A New Image</button>
+                <button onClick={getMemeImage} className='generate-meme-btn'>Get A New Image</button>
                 </div>
             </form>
             <div className='photo-container'>
-                <img className='memePhoto' src={meme} alt="Photo goes here" />
+                <img className='memePhoto' src={meme.randomImage} alt="Photo goes here" />
             </div>
         </section>
     )
