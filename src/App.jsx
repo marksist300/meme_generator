@@ -1,16 +1,13 @@
 import { useState } from 'react'
 import Nav from './components/Nav'
-import Photo from './components/Photo'
-import Input from './components/Input'
+import Meme from './components/Meme'
 import normalize from 'normalize.css'
 function App() {
   const [count, setCount] = useState(0)
-
   return (
     <div className="App">
       <Nav />
-      <Input />
-      <Photo />
+      <Meme />
     </div>
   )
 }

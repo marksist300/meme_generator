@@ -1,6 +1,15 @@
 import React from 'react'
+import memes from "../memeData"
 
 export default function Input(){
+    const [meme, setMeme] = React.useState("http://i.imgflip.com/1bij.jpg")
+
+    function getMemeImage() {
+        const memesArray = memes.data.memes
+        const index = Math.floor(Math.random() * memesArray.length)
+        setMeme(memesArray[index].url)
+    }
+
     return (
         <section className='input-container'>
             <form  action="">
@@ -9,9 +18,12 @@ export default function Input(){
                     <input className='text-box' type="text" placeholder='Text for bottom of image' />
                 </div>
                 <div className='btn-section'>
-                <button type='submit' className='generate-meme-btn'>Get A New Image</button>
+                <button className='generate-meme-btn'>Get A New Image</button>
                 </div>
             </form>
+            <div className='photo-container'>
+                <img className='memePhoto' src={meme} alt="Photo goes here" />
+            </div>
         </section>
     )
 }
