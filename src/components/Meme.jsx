@@ -37,6 +37,8 @@ export default function Input(){
             </form>
             <div className='photo-container'>
                 <img className='memePhoto' src={meme.randomImage} alt="Photo goes here" />
+                <h2 className="meme--text top">One does not simply</h2>
+                <h2 className="meme--text bottom">Walk into Mordor</h2>
             </div>
         </section>
     )
