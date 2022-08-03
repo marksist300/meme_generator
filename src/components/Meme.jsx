@@ -24,12 +24,24 @@ export default function Input(){
         console.log(meme)
     }
 
+    function handleChange(event){
+        event.preventDefault;
+        const {name, value} = event.target;
+        console.log(name, value)
+        setMeme(prev=> {
+            return {
+                ...prev,
+                [name]: value
+            }
+        })
+    }
+
     return (
         <section className='input-container'>
             <form  action="">
                 <div className='input-fields'>
-                    <input className='text-box' type="text" placeholder='Text for top of image'/>
-                    <input className='text-box' type="text" placeholder='Text for bottom of image' />
+                    <input name="topText" value={meme.topText} onChange={handleChange} className='text-box' type="text" placeholder='Text for top'/>
+                    <input name="bottomText" value={meme.bottomText} onChange={handleChange} className='text-box' type="text" placeholder='Text for bottom' />
                 </div>
                 <div className='btn-section'>
                 <button onClick={getMemeImage} className='generate-meme-btn'>Get A New Image</button>
@@ -37,8 +49,8 @@ export default function Input(){
             </form>
             <div className='photo-container'>
                 <img className='memePhoto' src={meme.randomImage} alt="Photo goes here" />
-                <h2 className="meme--text top">One does not simply</h2>
-                <h2 className="meme--text bottom">Walk into Mordor</h2>
+                <h2 className="meme--text top">{meme.topText}</h2>
+                <h2 className="meme--text bottom">{meme.bottomText}</h2>
             </div>
         </section>
     )

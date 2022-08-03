@@ -113,7 +113,6 @@ section{
     display: flex;
     justify-content: center;
     position: relative;
-    border: 1px solid white;
     .memePhoto{
         position:relative;
         width: 100%;
@@ -130,7 +129,7 @@ section{
         font-family: impact, sans-serif;
         font-size: 3rem;
         text-transform: uppercase;
-        color: #FFFFFF;
+        color: $textWhite;
         letter-spacing: 1px;
         text-shadow:
             2px 2px 0 #000,
