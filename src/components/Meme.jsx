@@ -5,10 +5,10 @@ export default function Input(){
     const [meme, setMeme] = React.useState({
         topText: '',
         bottomText: '',
-        randomImage: ''
+        randomImage: 'http://i.imgflip.com/1bij.jpg'
     })
 
-    const [allMemes, setAllMemes] = React.useState('http://i.imgflip.com/1bij.jpg')
+    const [allMemes, setAllMemes] = React.useState('')
 
     React.useEffect(()=>{
         fetch("https://api.imgflip.com/get_memes")
