@@ -1,5 +1,4 @@
 import React from 'react'
-import memes from "../memeData"
 
 export default function Input(){
     const [meme, setMeme] = React.useState({
@@ -14,7 +13,6 @@ export default function Input(){
         fetch("https://api.imgflip.com/get_memes")
         .then(res=> res.json())
         .then(data=> setAllMemes(data.data.memes))
-        console.log('done', allMemes)
     }, [])
 
     function getMemeImage(e) {
@@ -27,13 +25,11 @@ export default function Input(){
                 randomImage: memeCalled
             }
         })
-        console.log(meme)
     }
 
     function handleChange(event){
         event.preventDefault;
         const {name, value} = event.target;
-        console.log(name, value)
         setMeme(prev=> {
             return {
                 ...prev,
