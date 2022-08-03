@@ -1,5 +1,6 @@
 $linearColor: linear-gradient(90deg, #391346 1.18%, #A011D1 100%);
 $textWhite: #FFFFFF;
+$bodyColor: #282D35;
 
 :root {
     font-family: 'Karla', Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -17,11 +18,12 @@ text-decoration: none;
 }
 
 body{
-    background-color: #282D35;
+    background-color: $bodyColor;
 }
 
 nav{
     display: flex;
+    justify-content: space-between;
     color: $textWhite;
     background-image: $linearColor;
     padding: 2rem;
@@ -36,6 +38,73 @@ nav{
         font-size: 2rem;
         line-height: 2.4rem;
     }
+    .title-nav{
+        display: flex;
+    }
+}
+
+.toggler{
+    display: flex;
+    align-items: center;
+    
+    p {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    
+    .toggler-slider {
+        position: relative;
+        width: 2.5rem;
+        height: 1.3rem;
+        background-color: $bodyColor;
+        border-radius: 2rem;
+        margin-inline: .7rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        border: 1px solid black;
+        box-sizing: content-box;
+    }
+    
+    nav.dark .toggler-slider {
+        border-color: $textWhite;
+        background-color: #F5F5F5;
+    }
+    
+    .toggler-slider-circle {
+        position: absolute;
+        left: -.55rem;
+        height: 1.3rem;
+        width: 1.3rem;
+        background-color: $textWhite;
+        border-radius: 50%;
+    }
+    
+    nav.dark .toggler-slider-circle {
+        background-color: $bodyColor;
+    }
+    
+    .toggler-light {
+        color: $textWhite;
+    }
+    
+    nav.dark .toggler-light {
+        color: #918E9B;
+    }
+    
+    .toggler-dark {
+        color: $bodyColor;
+    }
+    
+    nav.dark .toggler-dark {
+        color: $textWhite;
+    }
+    
+    nav.dark .toggler-slider {
+        justify-content: flex-end;
+    }
+    
 }
 
 section{
