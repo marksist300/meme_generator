@@ -40,7 +40,7 @@ export default function Input(){
 
     return (
         <section className='input-container'>
-            <form  action="">
+            <form action="">
                 <div className='input-fields'>
                     <input name="topText" value={meme.topText} onChange={handleChange} className='text-box' type="text" placeholder='Text for top'/>
                     <input name="bottomText" value={meme.bottomText} onChange={handleChange} className='text-box' type="text" placeholder='Text for bottom' />

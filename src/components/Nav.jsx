@@ -1,6 +1,7 @@
 import React from 'react'
 import trollFace from '../assets/trollFace.svg'
-export default function Nav () {
+export default function Nav (props) {
+    const {toggleDarkMode, darkModeActive} = props
     return (
         <header>
             <nav className='nav-bar'>
@@ -11,8 +12,8 @@ export default function Nav () {
 
                 <div className="toggler">
                     <p className="toggler-light">Light</p>
-                    <div className="toggler-slider">
-                        <div className="toggler-slider-circle"></div>
+                    <div onClick={toggleDarkMode} className={darkModeActive? 'toggler-slider-dark' : 'toggler-slider-light'}>
+                        <div className={darkModeActive ? 'toggler-slider-circle-dark' : 'toggler-slider-circle-light'}></div>
                     </div>
                     <p className="toggler-dark">Dark</p>
                 </div>

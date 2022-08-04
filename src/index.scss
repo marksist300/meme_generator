@@ -1,6 +1,7 @@
 $linearColor: linear-gradient(90deg, #391346 1.18%, #A011D1 100%);
 $textWhite: #FFFFFF;
-$bodyColor: #282D35;
+$bodyDarkMode: #282D35;
+$bodyLightMode: #E5E5E5;
 
 :root {
     font-family: 'Karla', Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -17,8 +18,17 @@ color: inherit;
 text-decoration: none;
 }
 
-body{
-    background-color: $bodyColor;
+
+.darkMode{
+    background-color: $bodyDarkMode;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.lightMode{
+    background-color: $bodyLightMode;
+    min-height: 100vh;
+    width: 100%;
 }
 
 nav{
@@ -52,58 +62,57 @@ nav{
         font-weight: 600;
     }
     
-    .toggler-slider {
+    .toggler-slider-dark {
         position: relative;
         width: 2.5rem;
         height: 1.3rem;
-        background-color: $bodyColor;
+        background-color: $bodyDarkMode;
         border-radius: 2rem;
         margin-inline: .7rem;
         cursor: pointer;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
+        border: 1px solid black;
+        box-sizing: content-box;
+    }
+
+    .toggler-slider-light{
+        position: relative;
+        width: 2.5rem;
+        height: 1.3rem;
+        background-color: $textWhite;
+        border-radius: 2rem;
+        margin-inline: .7rem;
+        cursor: pointer;
         border: 1px solid black;
         box-sizing: content-box;
     }
     
-    nav.dark .toggler-slider {
-        border-color: $textWhite;
-        background-color: #F5F5F5;
-    }
-    
-    .toggler-slider-circle {
+    .toggler-slider-circle-light {
         position: absolute;
-        left: -.55rem;
+        left: -.60rem;
+        height: 1.3rem;
+        width: 1.3rem;
+        background-color: $bodyDarkMode;
+        border-radius: 50%;
+    }
+
+    .toggler-slider-circle-dark{
+        position: absolute;
+        left: .55rem;
         height: 1.3rem;
         width: 1.3rem;
         background-color: $textWhite;
         border-radius: 50%;
     }
     
-    nav.dark .toggler-slider-circle {
-        background-color: $bodyColor;
-    }
     
     .toggler-light {
         color: $textWhite;
     }
     
-    nav.dark .toggler-light {
-        color: #918E9B;
-    }
-    
     .toggler-dark {
-        color: $bodyColor;
+        color: $bodyDarkMode;
     }
-    
-    nav.dark .toggler-dark {
-        color: $textWhite;
-    }
-    
-    nav.dark .toggler-slider {
-        justify-content: flex-end;
-    }
+
     
 }
 
