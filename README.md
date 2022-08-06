@@ -3,6 +3,9 @@
 
 #Link to project: https://venerable-tanuki-73af7b.netlify.app
 
+<img width="1428" alt="memeGen" src="https://user-images.githubusercontent.com/88390425/183242938-4c9d0dc9-03a6-4b21-86bd-f6a69181cc08.png">
+
+
 ## How It's Made:
 The project was made in an effort to continue developing my understanding of React. It was a great opportunity to learn a lot more about state and props management in react. In this project I developed a good understanding of useEffect as well as fully integrating fetch requests in React. 
 
