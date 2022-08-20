@@ -10,9 +10,17 @@ export default function Input(){
     const [allMemes, setAllMemes] = React.useState('')
 
     React.useEffect(()=>{
-        fetch("https://api.imgflip.com/get_memes")
-        .then(res=> res.json())
-        .then(data=> setAllMemes(data.data.memes))
+        async function retrieveMemes(){
+            try{
+                const memeRes = await fetch("https://api.imgflip.com/get_memes");
+                const data = await memeRes.json()
+                setAllMemes(data.data.memes)
+            }
+            catch (err){
+                console.log(`Erroe fetching memes ${err}`)
+            }
+        }
+        retrieveMemes()
     }, [])
 
     function getMemeImage(e) {
